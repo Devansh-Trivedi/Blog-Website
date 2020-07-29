@@ -1,0 +1,23 @@
+<%- include('partials/header'); -%>
+<br>
+<button type="button" id="myButton" class="btn btn-info" style="background-color: teal;">Add Blog</button>
+<script type="text/javascript">
+     document.getElementById("myButton").onclick = function () {
+         location.href = "http://localhost:3000/compose";
+     };
+ </script>
+<h1>HOME</h1>
+<p> <h4><%= stringPara %></h4>  </p>
+
+<% posts.forEach(function(post){ %>
+
+     <h2><%=post.title%></h2> 
+     <p> <%=post.body.substring(0,100)+"..." %>
+     <a href="/posts/<%=post.title%>">Read More</a>
+     </p> 
+
+<% });  %>
+
+
+<%- include('partials/footer'); -%> 
+
